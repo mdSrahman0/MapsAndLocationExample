@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MapsActivity" >
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Address then hit 'Fetch Coordinates'"/>
+    <EditText
+        android:id="@+id/etCoords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Coords then hit 'Fetch Address'"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnFindCoordsGivenAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetch Coordinates"
+            android:onClick="onClick"/>
+        <Button
+            android:id="@+id/btnFindAddressGivenCoords"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fetch Address"
+            android:onClick="onClick"/>
+        <Button
+            android:id="@+id/btnGoToOffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Office"
+            android:onClick="onClick"/>
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinnerMapTypes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
